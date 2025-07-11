@@ -2,5 +2,12 @@
 name = "wgsl-macro"
 version = "0.1.0"
 edition = "2024"
+license = "MIT OR Apache-2.0"
+authors = ["eddie_0226@outlook.com"]
+description = "A WGSL shader preprocessor supporting #import, #ifdef, and compile-time constants."
+repository = "https://github.com/Eddieg26/wgsl-macro"
+readme = "README.md"
+keywords = ["wgsl", "shader", "preprocessor", "graphics", "webgpu"]
+categories = ["graphics", "rendering", "parser-implementations", "wasm", "development-tools"]
 
 [dependencies]
