@@ -1,4 +1,4 @@
-# wgsl-preprocessor
+# wgsl-macro
 
 A modular and async-capable preprocessor for WGSL (WebGPU Shading Language) shader source files.\
 Supports powerful directives like `#import`, `#ifdef`, `#const`, and conditionals to enable reusable, compile-time evaluated shader logic.
@@ -82,7 +82,7 @@ let imports = ShaderProcessor::get_imports(shader_src, |path| async move {
 ## 🚧 Roadmap
 
 - Expression parser for more advanced constant evaluation
-- Customizable token engine (e.g., for other shading languages)
+- GLSL support
 - CLI tool for shader preprocessing
 
 ---
