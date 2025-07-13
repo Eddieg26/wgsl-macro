@@ -23,7 +23,7 @@ Supports powerful directives like `#import`, `#ifdef`, `#const`, and conditional
 Add to your `Cargo.toml`:
 
 ```toml
-wgsl-macro = "0.1"
+wgsl-macro = "0.2"
 ```
 
 ---
