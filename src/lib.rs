@@ -295,9 +295,10 @@ impl<'a> ShaderProcessor<'a> {
         self.process_tokens(&mut tokens, constants)
     }
 
-    pub async fn get_imports<F, E>(
+    pub async fn get_imports<F, E, Ctx>(
         src: &'a str,
-        resolve: impl Fn(&str) -> F,
+        ctx: &'a mut Ctx,
+        resolve: impl Fn(&str, &mut Ctx) -> F,
     ) -> Result<ShaderImports, ShaderProcessorError<'a>>
     where
         E: Error,
@@ -320,7 +321,7 @@ impl<'a> ShaderProcessor<'a> {
                     }
 
                     // Resolve the import asynchronously
-                    let source = match resolve(path).await {
+                    let source = match resolve(path, ctx).await {
                         Ok(source) => source,
                         Err(e) => return Err(ShaderProcessorError::Message(e.to_string().into())),
                     };
