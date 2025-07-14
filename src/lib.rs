@@ -71,6 +71,7 @@ impl<'a> From<&'a str> for ShaderProcessorError<'a> {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub enum ShaderConstant {
     Bool(bool),
     I32(i32),
@@ -174,6 +175,7 @@ impl ToString for ShaderConstant {
 }
 
 #[derive(Debug, Default, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct ShaderConstants(HashMap<String, ShaderConstant>);
 impl ShaderConstants {
     pub fn new() -> Self {
