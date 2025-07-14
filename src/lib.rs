@@ -205,6 +205,12 @@ impl ShaderConstants {
     }
 }
 
+impl From<HashMap<String, ShaderConstant>> for ShaderConstants {
+    fn from(value: HashMap<String, ShaderConstant>) -> Self {
+        Self(value)
+    }
+}
+
 pub type ShaderImports = HashMap<String, String>;
 
 pub enum Token<'a> {
