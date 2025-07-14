@@ -1,6 +1,6 @@
 [package]
 name = "wgsl-macro"
-version = "0.2.2"
+version = "0.3.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 authors = ["eddie_0226@outlook.com"]
@@ -11,3 +11,7 @@ keywords = ["wgsl", "shader", "preprocessor", "graphics", "webgpu"]
 categories = ["graphics", "rendering", "parser-implementations", "wasm", "development-tools"]
 
 [dependencies]
+
+
+[dev-dependencies]
+pollster = "0.4.0"
